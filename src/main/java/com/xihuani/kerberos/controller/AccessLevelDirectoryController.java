@@ -1,7 +1,9 @@
 package com.xihuani.kerberos.controller;
 
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 import javax.servlet.http.HttpSession;
 
@@ -72,7 +74,7 @@ public class AccessLevelDirectoryController {
 	
 	@RequestMapping("/role/delete/{roleId}")
 	public String deleteRole(@PathVariable("roleId") Integer roleId) {
-		userService.deleteUser(roleId);
+		roleService.deleteRole(roleId);
 		return "redirect:" + Constants.View.KERBEROS_ROLES;
 	}
 	
@@ -92,8 +94,9 @@ public class AccessLevelDirectoryController {
 	public String editRoles(@PathVariable("userId") Integer userId, @RequestParam(value = "roleId", required = false) Integer []roleId) {
 		User user = userService.findUser(userId);
 		List<Role> roles = roleService.findRole(roleId);
-		user.setRoles(roles);
-//		userService.save(user);
+		Set<Role> set = new HashSet<Role>(roles);
+		user.setRoles(set);
+		userService.save(user);
 		return "redirect:" + Constants.View.KERBEROS_ACCESS_LEVEL;
 	}
 }

@@ -1,7 +1,7 @@
 package com.xihuani.kerberos.model;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -13,9 +13,8 @@ import javax.persistence.ManyToMany;
 import javax.persistence.CascadeType;
 import javax.persistence.JoinTable;
 import javax.persistence.JoinColumn;
-import javax.xml.bind.annotation.XmlRootElement;
 
-@XmlRootElement
+
 @Entity
 @Table(name="tlat_user")
 public class User {
@@ -44,21 +43,19 @@ public class User {
 	@Column(name="PROFILE_PICTURE_URL")
 	private String profilePictureUrl;
 	
-	@ManyToMany(cascade = {CascadeType.ALL}, fetch = FetchType.EAGER)
-    @JoinTable(name="tlat_access_level", 
-                joinColumns={@JoinColumn(name="user_id")}, 
-                inverseJoinColumns={@JoinColumn(name="role_id")})
-	private List<Role> roles;
+	@ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+	@JoinTable(name = "tlat_access_level", joinColumns = { 
+			@JoinColumn(name = "user_id", nullable = false, updatable = true) }, 
+			inverseJoinColumns = { @JoinColumn(name = "role_id", 
+					nullable = false, updatable = true) })
+	private Set<Role> roles = new HashSet<Role>(0);
 	
-	public User() {
-		this.setName("Cristian Colorado");
-		this.setEmail("ccoloradoc@gmail.com");
-		this.setGender("Male");
-		this.setLocationName("Monterrey, Mexico");
-		this.roles = new ArrayList<Role>();
-//		this.roles.add(new Role(1, "Sample1"));
-//		this.roles.add(new Role(2, "Sample2"));
-	}
+//	public User() {
+//		this.setName("Cristian Colorado");
+//		this.setEmail("ccoloradoc@gmail.com");
+//		this.setGender("Male");
+//		this.setLocationName("Monterrey, Mexico");
+//	}
 	
 	/**
 	 * @return the id
@@ -192,16 +189,18 @@ public class User {
 	public void setProfilePictureUrl(String profilePictureUrl) {
 		this.profilePictureUrl = profilePictureUrl;
 	}
+
 	/**
-	 * @return the roles
+	 * @return the role
 	 */
-	public List<Role> getRoles() {
+	public Set<Role> getRoles() {
 		return roles;
 	}
+
 	/**
-	 * @param roles the roles to set
+	 * @param role the role to set
 	 */
-	public void setRoles(List<Role> roles) {
+	public void setRoles(Set<Role> roles) {
 		this.roles = roles;
 	}
 }

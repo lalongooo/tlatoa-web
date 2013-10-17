@@ -9,5 +9,5 @@ public interface UserService {
 	public User findUser(int userId);
 	public void addUser(User user);
 	public void deleteUser(Integer userId);
-//	public void save(User user, int []rolesId);
+	public void save(User user);
 }

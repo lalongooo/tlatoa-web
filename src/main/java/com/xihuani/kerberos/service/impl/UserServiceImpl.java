@@ -47,12 +47,10 @@ public class UserServiceImpl implements UserService {
         }
 	}
 	
-//	@Override
-//	@Transactional
-//	public void save(int userId, Integer []roleId) {
-//		User user = this.findUser(userId);
-//		
-//		em.persist(user);
-//	}
+	@Override
+	@Transactional
+	public void save(User user) {
+		em.merge(user);
+	}
 
 }
