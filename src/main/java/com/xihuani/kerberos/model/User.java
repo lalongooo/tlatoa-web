@@ -16,7 +16,7 @@ import javax.persistence.JoinColumn;
 
 
 @Entity
-@Table(name="tlat_user")
+@Table(name="krrt_user")
 public class User {
 	@Id
 	@GeneratedValue
@@ -44,7 +44,7 @@ public class User {
 	private String profilePictureUrl;
 	
 	@ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-	@JoinTable(name = "tlat_access_level", joinColumns = { 
+	@JoinTable(name = "krrt_access_level", joinColumns = { 
 			@JoinColumn(name = "user_id", nullable = false, updatable = true) }, 
 			inverseJoinColumns = { @JoinColumn(name = "role_id", 
 					nullable = false, updatable = true) })

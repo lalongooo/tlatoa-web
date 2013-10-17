@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement
 @Entity
-@Table(name="tlat_role")
+@Table(name="krrt_role")
 public class Role {
 
 	@Id
