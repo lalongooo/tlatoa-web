@@ -16,9 +16,7 @@
 					        <tr>
 					            <th>Id</th>
 					            <th>Name</th>
-					            <th>&nbsp;</th>
-					            <th>&nbsp;</th>
-					            <th>&nbsp;</th>
+					            <th>Actions</th>
 					        </tr>
 				        </thead>
 				        <tbody>
@@ -26,9 +24,13 @@
 					            <tr>
 					                <td>${system.systemId}</td>
 					                <td>${system.systemName}</td>
-					                <td><form action="system/${system.systemId}/delete" method="post"><input type="submit" class="btn btn-danger btn-mini" value="Delete"/></form></td>
-					                <td><form action="system/${system.systemId}/role" method="get"><input type="submit" class="btn btn-danger btn-mini" value="Roles"/></form></td>
-					                <td><form action="system/${system.systemId}/access_level" method="get"><input type="submit" class="btn btn-danger btn-mini" value="Access Level"/></form></td>
+					                <td>
+					                	<ol class="breadcrumb">
+					                		<li><a href="system/${system.systemId}">Edit</a></li>
+										  <li><a href="system/${system.systemId}/role">Roles</a></li>
+										  <li><a href="system/${system.systemId}/access_level">Access Level</a></li>
+										</ol>
+					                </td>
 					            </tr>
 					        </c:forEach>
 				        </tbody>
