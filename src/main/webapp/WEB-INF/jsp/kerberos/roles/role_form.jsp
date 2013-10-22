@@ -7,6 +7,6 @@
 		<div class="form-group">
 		  <label for="inputEmail1" class="col-lg-2 control-label">Name</label>
 		  <div class="col-lg-10">
-		    <form:input type="text" class="form-control" placeholder="last name, first name" path="roleName"/>
+		    <form:input type="text" class="form-control" placeholder="Role Name" path="roleName"/>
 		  </div>
 		 </div>   
