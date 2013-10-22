@@ -57,7 +57,7 @@ public class AccessLevelDirectoryController {
     public String listSystemRoles(@PathVariable("systemId") Integer systemId, Map<String, Object> map) {
 		map.put("role", new Role());
 		map.put("roleList", systemService.getSystemRoles(systemId));
-		map.put("roles_nav_class","active");
+		map.put("systems_nav_class","active");
 		
 		return Constants.View.KERBEROS_HOME_JSP;
     }
@@ -103,7 +103,7 @@ public class AccessLevelDirectoryController {
 		map.put("name", name);
 		map.put("roleList", roleService.getRoleList());
 		map.put("userList", userService.getUserList());
-		map.put("access_level_nav_class","active");
+		map.put("systems_nav_class","active");
 		
 		return Constants.View.KERBEROS_HOME_JSP;
     }
@@ -112,7 +112,7 @@ public class AccessLevelDirectoryController {
     public String listAccessLevel(@PathVariable("systemId") Integer systemId, Map<String, Object> map) {
 		map.put("roleList", systemService.getSystemRoles(systemId));
 		map.put("userList", userService.getUserList());
-		map.put("access_level_nav_class","active");
+		map.put("systems_nav_class","active");
 		
 		return Constants.View.KERBEROS_HOME_JSP;
     }
