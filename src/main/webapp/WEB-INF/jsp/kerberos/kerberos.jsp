@@ -9,7 +9,7 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 		<title>Kerberos</title>
 		<c:set var="req" value="${pageContext.request}" />
-		<c:set var="baseURL" value="${req.scheme}://${req.serverName}:${req.serverPort}${req.contextPath}/kerberos" />
+		<c:set var="baseURL" value="${req.scheme}://${req.serverName}:${req.serverPort}${req.contextPath}kerberos" />
 		
 		<link href="${baseURL}/resources/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
 	</head>
