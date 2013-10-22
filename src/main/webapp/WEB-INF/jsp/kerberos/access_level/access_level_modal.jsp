@@ -6,7 +6,7 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 	<div class="modal fade" id="accessLevelModal" tabindex="-1" role="dialog" aria-labelledby="accessLevelModalLabel" aria-hidden="true">
-		<form method="post" id="roleEditForm" class="form-horizontal">
+		<form method="post" id="roleEditForm" action="${baseURL}/system/${systemId}/access_level/${userId}" class="form-horizontal" role="form">
 		    <div class="modal-dialog">
 		      <div class="modal-content">
 		        <div class="modal-header">

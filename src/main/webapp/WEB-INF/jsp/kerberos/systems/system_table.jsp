@@ -4,11 +4,11 @@
 <%@taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
- <c:if  test="${!empty userList}">
+ <c:if  test="${!empty systemList}">
 	<div class="row">
 	 	<div class="panel panel-default">
 	  			<div class="panel-heading">
-	  				<h3 class="panel-title">Users</h3>
+	  				<h3 class="panel-title">Systems</h3>
 				</div>
 	  			<div class="panel-body">
 				    <table class="table table-bordered table-striped">
@@ -16,21 +16,19 @@
 					        <tr>
 					            <th>Id</th>
 					            <th>Name</th>
-					            <th>Gender</th>
-					            <th>email</th>
-					            <th>Location</th>
+					            <th>&nbsp;</th>
+					            <th>&nbsp;</th>
 					            <th>&nbsp;</th>
 					        </tr>
 				        </thead>
 				        <tbody>
-					        <c:forEach items="${userList}" var="user">
+					        <c:forEach items="${systemList}" var="system">
 					            <tr>
-					                <td>${user.id}</td>
-					                <td>${user.name}</td>
-					                <td>${user.gender}</td>
-					                <td>${user.email}</td>
-					                <td>${user.locationName}</td>
-					                <td><form action="user/${user.id}/delete" method="post"><input type="submit" class="btn btn-danger btn-mini" value="Delete"/></form></td>
+					                <td>${system.systemId}</td>
+					                <td>${system.systemName}</td>
+					                <td><form action="system/${system.systemId}/delete" method="post"><input type="submit" class="btn btn-danger btn-mini" value="Delete"/></form></td>
+					                <td><form action="system/${system.systemId}/role" method="get"><input type="submit" class="btn btn-danger btn-mini" value="Roles"/></form></td>
+					                <td><form action="system/${system.systemId}/access_level" method="get"><input type="submit" class="btn btn-danger btn-mini" value="Access Level"/></form></td>
 					            </tr>
 					        </c:forEach>
 				        </tbody>

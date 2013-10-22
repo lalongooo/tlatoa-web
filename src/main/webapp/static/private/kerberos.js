@@ -5,7 +5,7 @@ $(document).ready(function() {
 });
 
 var editAccessLevel = function () {
-	$('#accessLevelModal #roleEditForm').prop('action', 'access_level/edit/' + $(this).closest('tr').find('#userId').val());
+	$('#accessLevelModal #roleEditForm').prop('action', $(this).closest('tr').find('#target').val());
 	$('#accessLevelModal #userName').val($(this).closest('tr').find('#userName').val());
 	
 	$(this).closest('tr').find('.role').each(function() {

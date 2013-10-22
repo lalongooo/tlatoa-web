@@ -1,5 +1,6 @@
 package com.xihuani.kerberos.model;
 
+import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -17,7 +18,7 @@ import javax.persistence.JoinColumn;
 
 @Entity
 @Table(name="krrt_user")
-public class User {
+public class User extends AbstractTimestampEntity implements Serializable {
 	@Id
 	@GeneratedValue
 	@Column(name="USER_ID")
@@ -49,13 +50,6 @@ public class User {
 			inverseJoinColumns = { @JoinColumn(name = "role_id", 
 					nullable = false, updatable = true) })
 	private Set<Role> roles = new HashSet<Role>(0);
-	
-//	public User() {
-//		this.setName("Cristian Colorado");
-//		this.setEmail("ccoloradoc@gmail.com");
-//		this.setGender("Male");
-//		this.setLocationName("Monterrey, Mexico");
-//	}
 	
 	/**
 	 * @return the id

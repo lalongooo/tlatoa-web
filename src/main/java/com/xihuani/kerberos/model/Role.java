@@ -1,17 +1,18 @@
 package com.xihuani.kerberos.model;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
-
 import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement
 @Entity
 @Table(name="krrt_role")
-public class Role {
+public class Role extends AbstractTimestampEntity implements Serializable {
 
 	@Id
 	@GeneratedValue
@@ -20,16 +21,6 @@ public class Role {
 	
 	@Column(name="role_name")
 	private String roleName;
-	
-	public Role() {
-		this.setId(0);
-		this.setRoleName("Sample");
-	}
-	
-	public Role(int id, String roleName) {
-		this.setId(id);
-		this.setRoleName(roleName);
-	}
 	
 	/**
 	 * @return the id

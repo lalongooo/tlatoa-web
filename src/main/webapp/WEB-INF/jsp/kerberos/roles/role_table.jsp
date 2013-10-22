@@ -24,7 +24,7 @@
 					            <tr>
 					                <td>${role.id}</td>
 					                <td>${role.roleName}</td>
-					                <td><form action="role/delete/${role.id}" method="post"><input type="submit" class="btn btn-danger btn-mini" value="Delete"/></form></td>
+					                <td><form action="system/${systemId}/role/${role.id}/delete" method="post"><input type="submit" class="btn btn-danger btn-mini" value="Delete"/></form></td>
 					            </tr>
 					        </c:forEach>
 				        </tbody>

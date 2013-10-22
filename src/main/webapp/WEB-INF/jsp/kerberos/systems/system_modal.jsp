@@ -4,16 +4,16 @@
 <%@taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<form:form method="post" action="${baseURL}/system/${systemId}/role" commandName="role" class="form-horizontal" role="form">
-	<div class="modal fade" id="roleModal" tabindex="-1" role="dialog" aria-labelledby="roleModalLabel" aria-hidden="true">
+<form:form method="post" action="${baseURL}/system" commandName="system" class="form-horizontal" role="form">
+	<div class="modal fade" id="systemModal" tabindex="-1" role="dialog" aria-labelledby=systemModalLabel" aria-hidden="true">
 	    <div class="modal-dialog">
 	      <div class="modal-content">
 	        <div class="modal-header">
 	          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-	          <h4 class="modal-title">New Role</h4>
+	          <h4 class="modal-title">New System</h4>
 	        </div>
 	        <div class="modal-body">
-	          <%@include file="role_form.jsp" %>
+	          <%@include file="system_form.jsp" %>
 	        </div>
 	        <div class="modal-footer">
 	          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

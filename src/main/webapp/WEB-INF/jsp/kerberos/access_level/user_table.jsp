@@ -33,16 +33,15 @@
 					                	
 					                </td>
 					                <td>
-					                	<!--form action="access_level/edit/${user.id}" method="post"-->
-					                	<input type="hidden" id="userId" name="userName" value="${user.id}"/>
-					                		<input type="hidden" id="userName" name="userName" value="${user.name}"/>
-					                		<c:if  test="${!empty user.roles}">
-						                		<c:forEach items="${user.roles}" var="role">
-						                			<input type="hidden" class="role" name="roleId" value="${role.id}"/>
-						                	 	</c:forEach>
-						                	 </c:if>
-					                		<input type="button" class="btn btn-warning editButton" value="Edit"/>
-					                	<!--/form-->
+				                		<input type="hidden" id="userId" name="userName" value="${user.id}"/>
+				                		<input type="hidden" id="userName" name="userName" value="${user.name}"/>
+				                		<c:if  test="${!empty user.roles}">
+					                		<c:forEach items="${user.roles}" var="role">
+					                			<input type="hidden" class="role" name="roleId" value="${role.id}"/>
+					                	 	</c:forEach>
+					                	 </c:if>
+					                	 <input type="hidden" id="target" name="target" value="${baseURL}/system/${systemId}/access_level/${user.id}"/>
+				                		 <input type="button" class="btn btn-warning editButton" value="Edit"/>
 					                </td>
 					            </tr>
 					        </c:forEach>

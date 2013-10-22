@@ -8,8 +8,10 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 		<title>Kerberos</title>
+		<c:set var="req" value="${pageContext.request}" />
+		<c:set var="baseURL" value="${req.scheme}://${req.serverName}:${req.serverPort}${req.contextPath}/kerberos" />
 		
-		<link href="./resources/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+		<link href="${baseURL}/resources/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
 	</head>
 	<body>
 		<div class="navbar navbar-inverse navbar-fixed-top">
@@ -35,19 +37,20 @@
 	    <div class="container" style="padding-top: 100px;">
 			<div class="row">
 				<ul class="nav nav-tabs">
-				  <li class="${users_nav_class}"><a href="./users">Users</a></li>
-				  <li class="${roles_nav_class}"><a href="./roles">Roles</a></li>
-				  <li class="${access_level_nav_class}"><a href="./access_level">Access Level</a></li>
+				  <li class="${systems_nav_class}"><a href="${baseURL}/system">Systems</a></li>
+				  <!-- li class="${roles_nav_class}"><a href="./system_roles?systemId=${systemId}">Roles</a></li-->
+				  <li class="${users_nav_class}"><a href="${baseURL}/user">Users</a></li>
+				  <!-- li class="${access_level_nav_class}"><a href="./system_access_level?systemId=${systemId}">Access Level</a></li-->
 				</ul>
 			</div>
 	      	
 			<c:choose>
-				<c:when test="${users_nav_class == 'active'}">
-					<%@include file="users/user_table.jsp" %>
+				<c:when test="${systems_nav_class == 'active'}">
+					<%@include file="systems/system_table.jsp" %>
 					<div class="row">
-						<a data-toggle="modal" href="#userModal" class="btn btn-primary btn-lg">Add User</a>
+						<a data-toggle="modal" href="#systemModal" class="btn btn-primary btn-lg">Add System</a>
 			      	</div>
-			      	<%@include file="users/user_modal.jsp" %>
+			      	<%@include file="systems/system_modal.jsp" %>
 				</c:when>
 				<c:when test="${roles_nav_class == 'active'}">
 					<%@include file="roles/role_table.jsp" %>
@@ -56,16 +59,23 @@
 			      	</div>
 			      	<%@include file="roles/role_modal.jsp" %>
 				</c:when>
+				<c:when test="${users_nav_class == 'active'}">
+					<%@include file="users/user_table.jsp" %>
+					<div class="row">
+						<a data-toggle="modal" href="#userModal" class="btn btn-primary btn-lg">Add User</a>
+			      	</div>
+			      	<%@include file="users/user_modal.jsp" %>
+				</c:when>
 				<c:when test="${access_level_nav_class == 'active'}">
 					<%@include file="access_level/access_level_search.jsp" %>
-					<%@include file="access_level/user_table.jsp" %>			
+					<%@include file="access_level/user_table.jsp" %>	
 					<%@include file="access_level/access_level_modal.jsp" %>
 				</c:when>
 			</c:choose>
 	    </div>
 	    
-	    <script src="./resources/jquery/jquery.js"></script>
-	    <script src="./resources/bootstrap/dist/js/bootstrap.min.js"></script>
-	    <script src="./kerberos-resources/kerberos.js"></script>
+	    <script src="${baseURL}/resources/jquery/jquery.js"></script>
+	    <script src="${baseURL}/resources/bootstrap/dist/js/bootstrap.min.js"></script>
+	    <script src="${baseURL}/kerberos-resources/kerberos.js"></script>
 	</body>
 </html>

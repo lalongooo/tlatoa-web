@@ -7,19 +7,19 @@
 		<div class="form-group">
 		  <label for="inputEmail1" class="col-lg-2 control-label">Name</label>
 		  <div class="col-lg-10">
-		    <form:input type="text" class="form-control" placeholder="last name, first name" path="name"/>
+		    <form:input type="text" class="form-control" placeholder="User Name" path="name"/>
 		  </div>
 		 </div>   
 		 <div class="form-group">
 			  <label for="inputEmail1" class="col-lg-2 control-label">Gender</label>
 			  <div class="col-lg-10">
-			    <form:input type="text" class="form-control" placeholder="gender" path="gender"/>
+			    <form:input type="text" class="form-control" placeholder="Male/Female" path="gender"/>
 			  </div>
 		 </div>
 		 <div class="form-group">
 			  <label for="inputEmail1" class="col-lg-2 control-label">email</label>
 			  <div class="col-lg-10">
-			    <form:input type="email" class="form-control" placeholder="Email" path="email"/>
+			    <form:input type="email" class="form-control" placeholder="something@domain.com" path="email"/>
 			  </div>
 		 </div>     
 		 <div class="form-group">
