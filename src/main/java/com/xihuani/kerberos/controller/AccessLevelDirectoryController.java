@@ -43,6 +43,7 @@ public class AccessLevelDirectoryController {
 		map.put("system", new System());
 		map.put("systemList", systemService.getSystemList());
 		map.put("systems_nav_class","active");
+		map.put("system_board","active");
 		
 		return Constants.View.KERBEROS_HOME_JSP;
 	}
@@ -58,6 +59,7 @@ public class AccessLevelDirectoryController {
 		map.put("role", new Role());
 		map.put("roleList", systemService.getSystemRoles(systemId));
 		map.put("systems_nav_class","active");
+		map.put("role_board","active");
 		
 		return Constants.View.KERBEROS_HOME_JSP;
     }
@@ -80,6 +82,7 @@ public class AccessLevelDirectoryController {
 		map.put("user", new User());
 		map.put("userList", userService.getUserList());
 		map.put("users_nav_class","active");
+		map.put("user_board","active");
 		
 		return Constants.View.KERBEROS_HOME_JSP;
     }
@@ -104,6 +107,7 @@ public class AccessLevelDirectoryController {
 		map.put("roleList", roleService.getRoleList());
 		map.put("userList", userService.getUserList());
 		map.put("systems_nav_class","active");
+		map.put("access_level_board","active");
 		
 		return Constants.View.KERBEROS_HOME_JSP;
     }
@@ -113,6 +117,7 @@ public class AccessLevelDirectoryController {
 		map.put("roleList", systemService.getSystemRoles(systemId));
 		map.put("userList", userService.getUserList());
 		map.put("systems_nav_class","active");
+		map.put("access_level_board","active");
 		
 		return Constants.View.KERBEROS_HOME_JSP;
     }

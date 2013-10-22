@@ -9,7 +9,7 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 		<title>Kerberos</title>
 		<c:set var="req" value="${pageContext.request}" />
-		<c:set var="baseURL" value="${req.scheme}://${req.serverName}:${req.serverPort}${req.contextPath}kerberos" />
+		<c:set var="baseURL" value="${req.scheme}://${req.serverName}:${req.serverPort}${req.contextPath}/kerberos" />
 		
 		<link href="${baseURL}/resources/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
 	</head>
@@ -45,28 +45,28 @@
 			</div>
 	      	
 			<c:choose>
-				<c:when test="${systems_nav_class == 'active'}">
+				<c:when test="${system_board == 'active'}">
 					<%@include file="systems/system_table.jsp" %>
 					<div class="row">
 						<a data-toggle="modal" href="#systemModal" class="btn btn-primary btn-lg">Add System</a>
 			      	</div>
 			      	<%@include file="systems/system_modal.jsp" %>
 				</c:when>
-				<c:when test="${roles_nav_class == 'active'}">
+				<c:when test="${role_board == 'active'}">
 					<%@include file="roles/role_table.jsp" %>
 					<div class="row">
 						<a data-toggle="modal" href="#roleModal" class="btn btn-primary btn-lg">Add Role</a>
 			      	</div>
 			      	<%@include file="roles/role_modal.jsp" %>
 				</c:when>
-				<c:when test="${users_nav_class == 'active'}">
+				<c:when test="${user_board == 'active'}">
 					<%@include file="users/user_table.jsp" %>
 					<div class="row">
 						<a data-toggle="modal" href="#userModal" class="btn btn-primary btn-lg">Add User</a>
 			      	</div>
 			      	<%@include file="users/user_modal.jsp" %>
 				</c:when>
-				<c:when test="${access_level_nav_class == 'active'}">
+				<c:when test="${access_level_board == 'active'}">
 					<%@include file="access_level/access_level_search.jsp" %>
 					<%@include file="access_level/user_table.jsp" %>	
 					<%@include file="access_level/access_level_modal.jsp" %>
