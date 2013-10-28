@@ -30,6 +30,9 @@
 	            <li><a href="#about">About</a></li>
 	            <li><a href="#contact">Contact</a></li>
 	          </ul>
+	          <form name='f' action="<c:url value='/j_spring_security_logout'/>" method='POST' class="navbar-form navbar-right">
+	            <button type="submit" class="btn btn-success">Logout</button>
+	          </form>
 	        </div><!--/.nav-collapse -->
 	      </div>
 	    </div>

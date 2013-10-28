@@ -33,6 +33,12 @@ public class AccessLevelDirectoryController {
 	@Autowired
 	private RoleService roleService;
 	
+	
+	@RequestMapping("/login")
+	public String login(Map<String, Object> map) {
+		return Constants.View.KERBEROS_LOGIN;
+	}
+	
 	@RequestMapping("/")
 	public String home(Map<String, Object> map) {
 		return "redirect:" + Constants.View.KERBEROS_SYSTEM;

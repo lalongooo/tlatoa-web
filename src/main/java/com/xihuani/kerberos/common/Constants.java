@@ -2,6 +2,7 @@ package com.xihuani.kerberos.common;
 
 public class Constants {
 	public class View {
+		public final static String KERBEROS_LOGIN = "login";
 		public final static String KERBEROS_SYSTEM = "/kerberos/system";
 		public final static String KERBEROS_USER = "/kerberos/user";
 		public final static String KERBEROS_ROLE = "/role";

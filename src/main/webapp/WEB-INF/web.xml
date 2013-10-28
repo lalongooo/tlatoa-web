@@ -9,11 +9,11 @@
     <welcome-file-list>
         <welcome-file>index.jsp</welcome-file>
     </welcome-file-list>
-
+	
 	<!-- Context and Listeners belong to Jersey/Spring web service -->
    	<context-param>
 	     <param-name>contextConfigLocation</param-name>
-	     <param-value>classpath:applicationContext.xml</param-value>
+	     <param-value>classpath:applicationContext.xml, classpath:spring-security.xml</param-value>
 	</context-param>
     
     <listener>
@@ -23,7 +23,6 @@
 	<listener>
 	    <listener-class>org.springframework.web.context.request.RequestContextListener</listener-class>
 	</listener>
-
 
     <servlet>
         <servlet-name>kerberos</servlet-name>
@@ -39,4 +38,14 @@
         <url-pattern>/kerberos/*</url-pattern>
     </servlet-mapping>
     
+    <!-- Spring Security -->
+	<filter>
+		<filter-name>springSecurityFilterChain</filter-name>
+		<filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
+	</filter>
+ 
+	<filter-mapping>
+		<filter-name>springSecurityFilterChain</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
 </web-app>
