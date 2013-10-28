@@ -24,7 +24,8 @@
 		<authentication-manager>
 		  <authentication-provider>
 		    <user-service>
-			<user name="kerberos" password="4815162342" authorities="ROLE_USER" />
+				<user name="kerberos" password="4815162342" authorities="ROLE_USER" />
+				<user name="xihuanicode@gmail.com" password="xihuani.48.code" authorities="ROLE_USER" />
 		    </user-service>
 		  </authentication-provider>
 		</authentication-manager>
