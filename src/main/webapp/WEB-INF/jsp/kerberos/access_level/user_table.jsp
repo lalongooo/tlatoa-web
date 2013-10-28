@@ -40,7 +40,7 @@
 					                			<input type="hidden" class="role" name="roleId" value="${role.id}"/>
 					                	 	</c:forEach>
 					                	 </c:if>
-					                	 <input type="hidden" id="target" name="target" value="${baseURL}/system/${systemId}/access_level/${user.id}"/>
+					                	 <input type="hidden" id="target" name="target" value="${baseURL}/kerberos/system/${systemId}/access_level/${user.id}"/>
 				                		 <input type="button" class="btn btn-warning editButton" value="Edit"/>
 					                </td>
 					            </tr>

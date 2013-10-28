@@ -4,7 +4,7 @@
 <%@taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<form:form method="post" action="${baseURL}/user" commandName="user" class="form-horizontal" role="form">
+<form:form method="post" action="${baseURL}/kerberos/user" commandName="user" class="form-horizontal" role="form">
 	<div class="modal fade" id="userModal" tabindex="-1" role="dialog" aria-labelledby="userModalLabel" aria-hidden="true">
 	    <div class="modal-dialog">
 	      <div class="modal-content">
