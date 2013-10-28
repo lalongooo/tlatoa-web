@@ -15,9 +15,9 @@
     <title>Kerberos</title>
 
 	<c:set var="req" value="${pageContext.request}" />
-	<c:set var="baseURL" value="${req.scheme}://${req.serverName}:${req.serverPort}${req.contextPath}/kerberos" />
+	<c:set var="baseURL" value="${req.scheme}://${req.serverName}:${req.serverPort}${req.contextPath}" />
 	
-	<link href="${baseURL}/resources/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+	<link href="${baseURL}/kerberos/resources/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
 </head>
 
   <body style="">
@@ -38,7 +38,7 @@
             <li><a href="#about">About</a></li>
             <li><a href="#contact">Contact</a></li>
           </ul>
-          <form name='f' action="<c:url value='/j_spring_security_check'/>" method='POST' class="navbar-form navbar-right">
+          <form name='f' action="${baseURL}/j_spring_security_check" method='POST' class="navbar-form navbar-right">
             <div class="form-group">
               <input type='text' name='j_username' value='' placeholder="Email" class="form-control">
             </div>
@@ -90,8 +90,8 @@
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="${baseURL}/resources/jquery/jquery.js"></script>
-	<script src="${baseURL}/resources/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="${baseURL}/kerberos/resources/jquery/jquery.js"></script>
+	<script src="${baseURL}/kerberos/resources/bootstrap/dist/js/bootstrap.min.js"></script>
   
 
 </body>

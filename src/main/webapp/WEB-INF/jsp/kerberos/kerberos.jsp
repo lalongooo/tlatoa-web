@@ -9,9 +9,9 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 		<title>Kerberos</title>
 		<c:set var="req" value="${pageContext.request}" />
-		<c:set var="baseURL" value="${req.scheme}://${req.serverName}:${req.serverPort}${req.contextPath}/kerberos" />
+		<c:set var="baseURL" value="${req.scheme}://${req.serverName}:${req.serverPort}${req.contextPath}" />
 		
-		<link href="${baseURL}/resources/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+		<link href="${baseURL}/kerberos/resources/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
 	</head>
 	<body>
 		<div class="navbar navbar-inverse navbar-fixed-top">
@@ -30,7 +30,7 @@
 	            <li><a href="#about">About</a></li>
 	            <li><a href="#contact">Contact</a></li>
 	          </ul>
-	          <form name='f' action="<c:url value='/j_spring_security_logout'/>" method='POST' class="navbar-form navbar-right">
+	          <form name='f' action="${baseURL}/j_spring_security_logout" method='POST' class="navbar-form navbar-right">
 	            <button type="submit" class="btn btn-success">Logout</button>
 	          </form>
 	        </div><!--/.nav-collapse -->
@@ -40,9 +40,9 @@
 	    <div class="container" style="padding-top: 100px;">
 			<div class="row">
 				<ul class="nav nav-tabs">
-				  <li class="${systems_nav_class}"><a href="${baseURL}/system">Systems</a></li>
+				  <li class="${systems_nav_class}"><a href="${baseURL}/kerberos/system">Systems</a></li>
 				  <!-- li class="${roles_nav_class}"><a href="./system_roles?systemId=${systemId}">Roles</a></li-->
-				  <li class="${users_nav_class}"><a href="${baseURL}/user">Users</a></li>
+				  <li class="${users_nav_class}"><a href="${baseURL}/kerberos/user">Users</a></li>
 				  <!-- li class="${access_level_nav_class}"><a href="./system_access_level?systemId=${systemId}">Access Level</a></li-->
 				</ul>
 			</div>
@@ -77,8 +77,8 @@
 			</c:choose>
 	    </div>
 	    
-	    <script src="${baseURL}/resources/jquery/jquery.js"></script>
-	    <script src="${baseURL}/resources/bootstrap/dist/js/bootstrap.min.js"></script>
-	    <script src="${baseURL}/kerberos-resources/kerberos.js"></script>
+	    <script src="${baseURL}/kerberos/resources/jquery/jquery.js"></script>
+	    <script src="${baseURL}/kerberos/resources/bootstrap/dist/js/bootstrap.min.js"></script>
+	    <script src="${baseURL}/kerberos/kerberos-resources/kerberos.js"></script>
 	</body>
 </html>
