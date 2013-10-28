@@ -17,6 +17,18 @@
 
 	<mvc:resources mapping="/resources/**" location="/static/public/" />
 
+	<bean id="jsonHttpMessageConverter"
+	    class="org.springframework.http.converter.json.MappingJacksonHttpMessageConverter" />
+	
+	<!-- Bind the return value of the Rest service to the ResponseBody. -->
+	<bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
+	    <property name="messageConverters">
+	        <list>
+	            <ref bean="jsonHttpMessageConverter" />
+	        </list>
+	    </property>
+	</bean>
+
     <bean id="jspViewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="viewClass" value="org.springframework.web.servlet.view.JstlView" />
         <property name="prefix" value="/WEB-INF/jsp/" />
