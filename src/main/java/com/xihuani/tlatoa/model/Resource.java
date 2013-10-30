@@ -24,7 +24,7 @@ public class Resource {
 	@Column(name="resource_url")
 	private String resourceURL;
 	
-	@ManyToOne(cascade= CascadeType.ALL) 
+	@ManyToOne(cascade= {CascadeType.PERSIST, CascadeType.MERGE}) 
 	@JoinColumn(name="sentence_id", insertable = true, updatable = true, nullable = false)
 	private Sentence sentence;  
 	
