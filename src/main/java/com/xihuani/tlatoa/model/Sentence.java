@@ -1,5 +1,6 @@
 package com.xihuani.tlatoa.model;
 
+import java.util.List;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
@@ -23,8 +24,8 @@ public class Sentence {
 	private String sentence;
 	
 	
-	@OneToMany(mappedBy = "sentence", cascade = CascadeType.ALL)  
-	private Set<Resource> resources; 
+	@OneToMany(mappedBy = "sentence", cascade = CascadeType.ALL, fetch = FetchType.EAGER)  
+	private List<Resource> resources; 
 	
 	/**
 	 * @return the sentenceId
@@ -53,13 +54,13 @@ public class Sentence {
 	/**
 	 * @return the resources
 	 */
-	public Set<Resource> getResources() {
+	public List<Resource> getResources() {
 		return resources;
 	}
 	/**
 	 * @param resources the resources to set
 	 */
-	public void setResources(Set<Resource> resources) {
+	public void setResources(List<Resource> resources) {
 		this.resources = resources;
 	}
 	

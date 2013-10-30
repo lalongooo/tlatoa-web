@@ -28,7 +28,7 @@
 					                <td>${resrouce.sequenceOrder}</td>
 					                <td>
 					                	<ol class="breadcrumb">
-										  <li><a href="#">None</a></li>
+										  <li><a href="${baseURL}/manager/sentence/${sentenceId}/resource/${resrouce.resourceId}/delete">Remove</a></li>
 										</ol>
 					                </td>
 					            </tr>

@@ -81,10 +81,16 @@ public class ResourceServiceImpl implements ResourceService {
 	public void removeResource(Integer sentenceId, Integer resourceId) {
 		Sentence s = em.find(Sentence.class, sentenceId);
         if (null != s) {
-//        	s.getResources().add(resource);
-//        	resource.setSentence(s);
+        	List<Resource> resources = s.getResources();
+        	for(int i = 0; i < resources.size(); i++) {
+        		Resource r = resources.get(i); 
+        		if(r.getResourceId() == resourceId){
+        			resources.remove(i);
+        			em.remove(r);
+        		}
+        	}
         }
-       em.merge(s);
+       //em.merge(s);
 	}
 	
 	@Override
@@ -92,7 +98,7 @@ public class ResourceServiceImpl implements ResourceService {
 	public List<Resource> listResource(Integer sentenceId) {
 		Sentence s = em.find(Sentence.class, sentenceId);
         if (null != s) {
-        	return new ArrayList<Resource>(s.getResources());
+        	return s.getResources();
         }
         
         return null;

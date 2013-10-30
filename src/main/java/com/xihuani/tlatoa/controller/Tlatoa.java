@@ -51,7 +51,7 @@ public class Tlatoa {
 		return ControllerUtil.redirect(Constants.View.TLATOA_HOME, sentenceId, Constants.View.TLATOA_RESOURCE);
 	}
 	
-	@RequestMapping(value = "/sentence/{sentenceId}/resource/{resourceId}", method = RequestMethod.GET)
+	@RequestMapping(value = "/sentence/{sentenceId}/resource/{resourceId}/delete", method = RequestMethod.GET)
 	public String addResources(@PathVariable("sentenceId")Integer sentenceId, @PathVariable("resourceId")Integer resourceId) {
 		resourceService.removeResource(sentenceId, resourceId);
 		return ControllerUtil.redirect(Constants.View.TLATOA_HOME, sentenceId, Constants.View.TLATOA_RESOURCE);
