@@ -25,7 +25,7 @@ import com.xihuani.kerberos.service.SystemService;
 import com.xihuani.kerberos.service.UserService;
 
 @Controller
-public class AccessLevelDirectoryController {
+public class KerberosController {
 	@Autowired
 	private SystemService systemService;
 	@Autowired

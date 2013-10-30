@@ -24,6 +24,7 @@
 	    <listener-class>org.springframework.web.context.request.RequestContextListener</listener-class>
 	</listener>
 
+	<!-- Kerberos Servlet -->
     <servlet>
         <servlet-name>kerberos</servlet-name>
         <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
@@ -36,6 +37,21 @@
     <servlet-mapping>
         <servlet-name>kerberos</servlet-name>
         <url-pattern>/kerberos/*</url-pattern>
+    </servlet-mapping>
+    
+    <!-- Tlatoa Servlet -->
+    <servlet>
+        <servlet-name>tlatoa</servlet-name>
+        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+        <init-param>
+            <param-name>contextConfigLocation</param-name>
+            <param-value>classpath:tlatoa-applicationContext.xml</param-value>
+        </init-param>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>tlatoa</servlet-name>
+        <url-pattern>/manager/*</url-pattern>
     </servlet-mapping>
     
     <!-- Spring Security -->
