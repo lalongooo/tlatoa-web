@@ -13,5 +13,6 @@ public interface ResourceService {
 	public void saveSentence(Sentence sentence);
 	public void deleteSentence(Integer sentenceId);
 	public void addResource(Integer sentenceId, Resource resource);
+	public void removeResource(Integer sentenceId, Integer resourceId);
 	public List<Resource> listResource(Integer sentenceId);
 }

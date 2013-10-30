@@ -60,6 +60,10 @@
 					<div class="row">
 						<a data-toggle="modal" href="#resourceModal" class="btn btn-primary btn-lg">Add Resource</a>
 			      	</div>
+					<%@include file="resource/resource_grid.jsp" %>
+					<div class="row">
+						<a class="btn btn-primary btn-lg">Save Sort</a>
+			      	</div>
 			      	<%@include file="resource/resource_modal.jsp" %>
 				</c:when>
 			</c:choose>

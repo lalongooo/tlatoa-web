@@ -78,6 +78,17 @@ public class ResourceServiceImpl implements ResourceService {
 	
 	@Override
 	@Transactional
+	public void removeResource(Integer sentenceId, Integer resourceId) {
+		Sentence s = em.find(Sentence.class, sentenceId);
+        if (null != s) {
+//        	s.getResources().add(resource);
+//        	resource.setSentence(s);
+        }
+       em.merge(s);
+	}
+	
+	@Override
+	@Transactional
 	public List<Resource> listResource(Integer sentenceId) {
 		Sentence s = em.find(Sentence.class, sentenceId);
         if (null != s) {

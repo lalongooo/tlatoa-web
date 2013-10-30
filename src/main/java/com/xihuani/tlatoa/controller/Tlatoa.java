@@ -51,6 +51,12 @@ public class Tlatoa {
 		return ControllerUtil.redirect(Constants.View.TLATOA_HOME, sentenceId, Constants.View.TLATOA_RESOURCE);
 	}
 	
+	@RequestMapping(value = "/sentence/{sentenceId}/resource/{resourceId}", method = RequestMethod.GET)
+	public String addResources(@PathVariable("sentenceId")Integer sentenceId, @PathVariable("resourceId")Integer resourceId) {
+		resourceService.removeResource(sentenceId, resourceId);
+		return ControllerUtil.redirect(Constants.View.TLATOA_HOME, sentenceId, Constants.View.TLATOA_RESOURCE);
+	}
+	
 	@RequestMapping(value = "/sentence/{sentenceId}/sort_resource", method = RequestMethod.POST)
 	public String sortRerources(@PathVariable("sentenceId") Integer sentenceId, @RequestParam(value = "resourceId", required = true)Integer[] resourceId) {
 		
