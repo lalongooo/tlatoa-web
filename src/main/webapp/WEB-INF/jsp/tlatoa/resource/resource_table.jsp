@@ -21,14 +21,14 @@
 					        </tr>
 				        </thead>
 				        <tbody>
-					        <c:forEach items="${resourceList}" var="resrouce">
+					        <c:forEach items="${resourceList}" var="resource">
 					            <tr>
-					                <td>${resrouce.resourceId}</td>
-					                <td>${resrouce.resourceURL}</td>
-					                <td>${resrouce.sequenceOrder}</td>
+					                <td>${resource.resourceId}</td>
+					                <td>${resource.resourceURL}</td>
+					                <td>${resource.sequenceOrder}</td>
 					                <td>
 					                	<ol class="breadcrumb">
-										  <li><a href="${baseURL}/manager/sentence/${sentenceId}/resource/${resrouce.resourceId}/delete">Remove</a></li>
+										  <li><a href="${baseURL}/manager/sentence/${sentenceId}/resource/${resource.resourceId}/delete">Remove</a></li>
 										</ol>
 					                </td>
 					            </tr>
