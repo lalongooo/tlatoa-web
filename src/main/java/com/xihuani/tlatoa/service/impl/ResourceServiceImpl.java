@@ -70,6 +70,7 @@ public class ResourceServiceImpl implements ResourceService {
 	public void addResource(Integer sentenceId, Resource resource) {
 		Sentence s = em.find(Sentence.class, sentenceId);
         if (null != s) {
+        	resource.setSequenceOrder(s.getResources().size());
         	s.getResources().add(resource);
         	resource.setSentence(s);
         }

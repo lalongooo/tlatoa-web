@@ -10,6 +10,7 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.OrderBy;
 import javax.persistence.Table;
 
 @Entity
@@ -25,6 +26,7 @@ public class Sentence {
 	
 	
 	@OneToMany(mappedBy = "sentence", cascade = CascadeType.ALL, fetch = FetchType.EAGER)  
+	@OrderBy("sequenceOrder")
 	private List<Resource> resources; 
 	
 	/**
