@@ -17,6 +17,7 @@
 					            <th>Id</th>
 					            <th>Sentence</th>
 					            <th>Actions</th>
+					            <th>Preview</th>
 					        </tr>
 				        </thead>
 				        <tbody>
@@ -29,6 +30,13 @@
 										  <li><a href="${baseURL}/manager/sentence/${sentence.sentenceId}/resource">Resource</a></li>
 										</ol>
 					                </td>
+					                <td>
+					                	<c:if  test="${!empty sentence.resources}">
+						                	<c:forEach items="${sentence.resources}" var="resource">
+						                		<img id="${resource.resourceId}" src="${resource.resourceURL}" alt="${resource.resourceId}" class="img-thumbnail" style="width:50px">
+						                	</c:forEach>
+					                	</c:if>
+									</td>
 					            </tr>
 					        </c:forEach>
 				        </tbody>
