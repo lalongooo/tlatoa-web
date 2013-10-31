@@ -10,6 +10,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import org.codehaus.jackson.annotate.JsonIgnore;
+
 @Entity
 @Table(name="tltt_resource")
 public class Resource {
@@ -26,6 +28,7 @@ public class Resource {
 	
 	@ManyToOne(cascade= {CascadeType.PERSIST, CascadeType.MERGE}) 
 	@JoinColumn(name="sentence_id", insertable = true, updatable = true, nullable = false)
+	@JsonIgnore
 	private Sentence sentence;  
 	
 	/**

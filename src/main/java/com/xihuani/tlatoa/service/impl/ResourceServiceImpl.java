@@ -39,8 +39,8 @@ public class ResourceServiceImpl implements ResourceService {
 		CriteriaQuery<Sentence> c = em.getCriteriaBuilder().createQuery(Sentence.class);
 		Root<Sentence> roleRoot = c.from( Sentence.class );
 		c.select( roleRoot );
-		Expression<String> exp = roleRoot.get( "sentence_name" );
-		Predicate r = em.getCriteriaBuilder().like(exp, sentence);
+		Expression<String> exp = roleRoot.get( "sentence" );
+		Predicate r = em.getCriteriaBuilder().like(exp, "%" + sentence + "%");
 		c.where( r );		
 		return em.createQuery(c).getResultList();
 	}
