@@ -2,6 +2,7 @@ package com.xihuani.tlatoa.service.impl;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.ListIterator;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -91,7 +92,25 @@ public class ResourceServiceImpl implements ResourceService {
         		}
         	}
         }
-       //em.merge(s);
+	}
+	
+	@Override
+	@Transactional
+	public void sortResource(Integer sentenceId, Integer []resourceId) {
+		Sentence s = em.find(Sentence.class, sentenceId);
+        if (null != s) {
+        	List<Resource> resources = s.getResources();
+        	ListIterator<Resource> it = resources.listIterator();
+        	while(it.hasNext()) {
+        		Resource r = it.next();
+        		for(int i = 0; i < resourceId.length; i++) {
+        			if(resourceId[i] == r.getResourceId()) {
+        				r.setSequenceOrder(i);
+        			}
+        		}
+        	}
+        }
+        em.merge(s);
 	}
 	
 	@Override

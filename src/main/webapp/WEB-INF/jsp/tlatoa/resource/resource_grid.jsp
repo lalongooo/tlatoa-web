@@ -6,15 +6,24 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
  <c:if  test="${!empty resourceList}">
 	<div class="row">
+		<form action="${baseURL}/manager/sentence/${sentenceId}/sort_resource" method="post">
 	 	<div class="panel panel-default">
+	 		
 	  			<div class="panel-heading">
 	  				<h3 class="panel-title">Resource Sorting</h3>
 				</div>
 	  			<div class="panel-body">
 			        <c:forEach items="${resourceList}" var="resrouce">
-			        	<img id="${resrouce.resourceId}" src="${resrouce.resourceURL}" alt="${resrouce.resourceId}" class="img-thumbnail" style="width:100px">
+			        	<div class="draggable">
+			        		<img src="${resrouce.resourceURL}" alt="${resrouce.resourceId}" class="img-thumbnail" style="width:100px">
+			        		<input type="hidden" name="resourceId" value="${resrouce.resourceId}">
+			        	</div>
 			        </c:forEach>
 				</div>
+				<div class="panel-footer">
+		        	<button type="submit" class="btn btn-primary">Save changes</button>
+		        </div>
 		</div>
+		</form>
 	</div>
 </c:if>

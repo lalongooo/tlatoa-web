@@ -15,6 +15,7 @@
 				        <thead>
 					        <tr>
 					            <th>Id</th>
+					            <th>Preview</th>
 					            <th>URL</th>
 					            <th>Order</th>
 					            <th>Actions</th>
@@ -24,6 +25,7 @@
 					        <c:forEach items="${resourceList}" var="resource">
 					            <tr>
 					                <td>${resource.resourceId}</td>
+					                <td><img src="${resource.resourceURL}" alt="${resource.resourceId}" class="img-thumbnail" style="width:25px"></td>
 					                <td>${resource.resourceURL}</td>
 					                <td>${resource.sequenceOrder}</td>
 					                <td>

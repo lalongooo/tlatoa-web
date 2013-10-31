@@ -14,5 +14,6 @@ public interface ResourceService {
 	public void deleteSentence(Integer sentenceId);
 	public void addResource(Integer sentenceId, Resource resource);
 	public void removeResource(Integer sentenceId, Integer resourceId);
+	public void sortResource(Integer sentenceId, Integer []resourceId);
 	public List<Resource> listResource(Integer sentenceId);
 }

@@ -59,7 +59,7 @@ public class Tlatoa {
 	
 	@RequestMapping(value = "/sentence/{sentenceId}/sort_resource", method = RequestMethod.POST)
 	public String sortRerources(@PathVariable("sentenceId") Integer sentenceId, @RequestParam(value = "resourceId", required = true)Integer[] resourceId) {
-		
+		resourceService.sortResource(sentenceId, resourceId);
 		return ControllerUtil.redirect(Constants.View.TLATOA_HOME, sentenceId, Constants.View.TLATOA_RESOURCE);
 	}
 	

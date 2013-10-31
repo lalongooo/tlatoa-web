@@ -61,9 +61,6 @@
 						<a data-toggle="modal" href="#resourceModal" class="btn btn-primary btn-lg">Add Resource</a>
 			      	</div>
 					<%@include file="resource/resource_grid.jsp" %>
-					<div class="row">
-						<a class="btn btn-primary btn-lg">Save Sort</a>
-			      	</div>
 			      	<%@include file="resource/resource_modal.jsp" %>
 				</c:when>
 			</c:choose>
@@ -72,5 +69,15 @@
 	    <script src="${baseURL}/kerberos/resources/jquery/jquery.js"></script>
 	    <script src="${baseURL}/kerberos/resources/bootstrap/dist/js/bootstrap.min.js"></script>
 	    <script src="${baseURL}/kerberos/kerberos-resources/kerberos.js"></script>
+	    <script src="${baseURL}/kerberos/kerberos-resources/util/dragndrop.js"></script>
+	    
+	    <style>
+		    .over {
+			  border: 2px dashed #000;
+			}
+			.draggable {
+				display: inline-block;
+			}
+	    </style>
 	</body>
 </html>
