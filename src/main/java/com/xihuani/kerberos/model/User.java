@@ -44,7 +44,7 @@ public class User extends AbstractTimestampEntity implements Serializable {
 	@Column(name="PROFILE_PICTURE_URL")
 	private String profilePictureUrl;
 	
-	@ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+	@ManyToMany(fetch = FetchType.EAGER, cascade = {CascadeType.REFRESH, CascadeType.REMOVE})
 	@JoinTable(name = "krrt_access_level", joinColumns = { 
 			@JoinColumn(name = "user_id", nullable = false, updatable = true) }, 
 			inverseJoinColumns = { @JoinColumn(name = "role_id", 
