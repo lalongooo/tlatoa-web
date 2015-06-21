@@ -24,22 +24,37 @@
 	    <listener-class>org.springframework.web.context.request.RequestContextListener</listener-class>
 	</listener>
 
-	<!-- Kerberos Servlet -->
+	<!-- System Servlet -->
     <servlet>
-        <servlet-name>kerberos</servlet-name>
+        <servlet-name>system</servlet-name>
         <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
         <init-param>
             <param-name>contextConfigLocation</param-name>
-            <param-value>classpath:kerberos-applicationContext.xml</param-value>
+            <param-value>classpath:system-applicationContext.xml</param-value>
         </init-param>
         <load-on-startup>1</load-on-startup>
     </servlet>
     <servlet-mapping>
-        <servlet-name>kerberos</servlet-name>
-        <url-pattern>/kerberos/*</url-pattern>
+        <servlet-name>system</servlet-name>
+        <url-pattern>/system/*</url-pattern>
     </servlet-mapping>
     
-    <!-- Tlatoa Servlet -->
+	<!-- Permutas SEP Servlet 
+    <servlet>
+        <servlet-name>permutassep</servlet-name>
+        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+        <init-param>
+            <param-name>contextConfigLocation</param-name>
+            <param-value>classpath:permutassep-applicationContext.xml</param-value>
+        </init-param>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>permutassep</servlet-name>
+        <url-pattern>/permutassep/*</url-pattern>
+    </servlet-mapping>    -->
+    
+    <!-- Tlatoa Servlet 
     <servlet>
         <servlet-name>tlatoa</servlet-name>
         <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
@@ -52,7 +67,7 @@
     <servlet-mapping>
         <servlet-name>tlatoa</servlet-name>
         <url-pattern>/manager/*</url-pattern>
-    </servlet-mapping>
+    </servlet-mapping>-->
     
     <!-- Spring Security -->
 	<filter>

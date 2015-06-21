@@ -11,7 +11,7 @@
 		<c:set var="req" value="${pageContext.request}" />
 		<c:set var="baseURL" value="${req.scheme}://${req.serverName}:${req.serverPort}${req.contextPath}" />
 		
-		<link href="${baseURL}/kerberos/resources/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+		<link href="${baseURL}/system/resources/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
 	</head>
 	<body>
 		<div class="navbar navbar-inverse navbar-fixed-top">
@@ -66,10 +66,10 @@
 			</c:choose>
 	    </div>
 	    
-	    <script src="${baseURL}/kerberos/resources/jquery/jquery.js"></script>
-	    <script src="${baseURL}/kerberos/resources/bootstrap/dist/js/bootstrap.min.js"></script>
-	    <script src="${baseURL}/kerberos/kerberos-resources/kerberos.js"></script>
-	    <script src="${baseURL}/kerberos/kerberos-resources/util/dragndrop.js"></script>
+	    <script src="${baseURL}/system/resources/jquery/jquery.js"></script>
+	    <script src="${baseURL}/system/resources/bootstrap/dist/js/bootstrap.min.js"></script>
+	    <script src="${baseURL}/system/system-resources/system.js"></script>
+	    <script src="${baseURL}/system/system-resources/util/dragndrop.js"></script>
 	    
 	    <style>
 		    .over {
